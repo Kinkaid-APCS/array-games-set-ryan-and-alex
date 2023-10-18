@@ -20,7 +20,7 @@ public class Card {
 	 * @param whichIcon: a number 0-2, where 0 means "*"; 1 means "o"; and 2 means "•" 
 	 * @param groupSize: a number 1-3
 	 * @param whichColor: a number 0-2
-	 * @param whichBackground: a number 0-2*
+	 * @param whichBackground: a number 0-2**
 	 */
 		int whichIcon = rand.nextInt(2);
 		int groupSize = rand.nextInt(3) + 1;
