@@ -59,11 +59,30 @@ public class Deck {
 	{
 		//--------------------
 		// TODO: insert your code here.
+		for (int i = 0; i < numCards() * 3; i++)
+		{
+			int a = (int)(Math.random()*(numCards()));
+			int b = (int)(Math.random()*(numCards()));
+
+			if (a != b)
+			{
+				Card temp = Deck[a];
+				Deck[a] = Deck[b];
+				Deck[b] = temp;
+			}
+
+		}
+
+
 		// Hint #1: Remember, (int)(Math.random()*52) will give you an integer from 0..51, inclusive.
 		// Hint #2: 52 is not the number you want for this deck.
 		
 		//--------------------
 		
+	}
+
+	public int numCards(){
+		// return lastCard + 1;
 	}
 	
 	/**
