@@ -22,16 +22,20 @@ public class Card {
 	 * @param whichColor: a number 0-2
 	 * @param whichBackground: a number 0-2**
 	 */
-		int whichIcon = rand.nextInt(2);
-		int groupSize = rand.nextInt(3) + 1;
-		int whichColor = rand.nextInt(2);
-		int whichBackground = rand.nextInt(2);
+		private int whichIcon;
+		private int groupSize;
+		private int whichColor;
+		private int whichBackground;
 
 	 public Card(int whichIcon, int groupSize, int whichColor, int whichBackground)
 	 {
 		//--------------------
 		// TODO: insert your code here.
 		//--------------------
+		 icon = whichIcon;
+		 size = groupSize;
+		 color = whichColor;
+		 background = whichBackground;
 	 }
 	
 	 // TODO: write accessors for all member variables. In this case,

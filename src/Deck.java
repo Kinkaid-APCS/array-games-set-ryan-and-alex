@@ -14,6 +14,20 @@ public class Deck {
 	{
 		//--------------------
 		// TODO: insert your code here.
+		Card pile = new Card();
+		for (int h = 0; h<81;h++){
+			for (int i = 0; i<2;i++){
+				for (int j = 1; i<3;i++){
+					for(int k =0; k<2;k++){
+						for (int l = 0; l<2;l++){
+							Card[h] = pile.Card(i,j,k,l);
+						}
+
+					}
+				}
+			}
+		}
+
 		
 		//--------------------
 		
