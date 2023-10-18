@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * the Card class represents a card in the Set game - it consists 
  * of 1-3 characters (aka icons), which come in 3 varieties. Each of the
@@ -11,6 +13,8 @@ public class Card {
 
 	// TODO: decide which private member variables the Card class requires and declare them here.
 
+	Random rand = new Random();
+
 	/**
 	 * constructor - given four values, initialize the card.
 	 * @param whichIcon: a number 0-2, where 0 means "*"; 1 means "o"; and 2 means "•" 
@@ -18,6 +22,11 @@ public class Card {
 	 * @param whichColor: a number 0-2
 	 * @param whichBackground: a number 0-2
 	 */
+		int whichIcon = rand.nextInt(2);
+		int groupSize = rand.nextInt(3) + 1;
+		int whichColor = rand.nextInt(2);
+		int whichBackground = rand.nextInt(2);
+
 	 public Card(int whichIcon, int groupSize, int whichColor, int whichBackground)
 	 {
 		//--------------------
