@@ -2,7 +2,9 @@
  * The Deck class represents a pile of cards.
  */
 public class Deck {
-	private Card[] Deck;
+    //--------------------
+// TODO: insert your code here.
+    private Card[] Deck = new Card[81];
 
 //	private int topOfDeck; decided to do it similar to blackjack
 	private int lastCard;
@@ -14,11 +16,8 @@ public class Deck {
 	 */
 	public Deck()
 	{
-		//--------------------
-		// TODO: insert your code here.
-		Deck = new Card[81];
 
-		for (int h = 0; h<81;h++){
+        for (int h = 0; h<81;h++){
 			for (int i = 0; i<2;i++){
 				for (int j = 1; i<3;i++){
 					for(int k =0; k<2;k++){
