@@ -50,24 +50,44 @@ public class Card {
 	// and "/u001B[31m/u001B[42mTest2/u001B[0m" prints Test2 in red letters on a green background.
 	//  (the /u001B[0m at the end resets the color to normal for the next thing you print.)
 	public String toString() {
-		String Card = "";
-		if (whichIcon == 0){
-			Card += "*";
-		} else if (whichIcon == 1) {
-			Card += "o";
-		} else if (whichIcon == 2){
-			Card += "•";
+
+		String background = null;
+		String color = null;
+		String number = null;
+		String icon = null;
+
+		//whichColor
+		if (whichColor == 0){
+			color = "\u001B[31m"; //this is Red
+		} else if(whichColor ==1) {
+			color = "\u001B[32m"; //this is Green
+		} else if(whichColor==2){
+			color = "\\u001B[35m"; //this is Purple
 		}
+
+		//whichBackground
 		if (whichBackground == 0){
-
+			background = "\\u001B[43m"; // this is Yellow
+		}else if(whichBackground==1){
+			background = "\\u001B[46m"; // this is Aqua/Cyan
+		}else if(whichBackground==2){
+			background = "\\u001B[44m"; // this is Blue
 		}
-		if (whichColor ==  0){
 
+		//whichIcon
+		if (whichIcon == 0){
+			icon = "x";
+		}else if (whichIcon == 1){
+			icon = "•";
+		} else if (whichIcon == 2) {
+			icon = "o";
 		}
-		if (groupSize == 1){
 
-		}
-		return Card;
+		number = icon.repeat(groupSize);
+
+		String Card = (color+background+number);
+
+		return "Cards:\n" + Card;
 	}
 	
 }
