@@ -12,13 +12,15 @@ import java.util.Scanner;
 public class Referee {
 	// TODO: decide which private member variables the Referee class needs and declare them here.
 	private boolean isPlaying;
+
 	private Scanner scan = new Scanner(System.in);
+	private Dealer[] hand = new Dealer[12];
 	/**
 	 * constructor
 	 */
 	// TODO: write the Referee's constructor method.
 	public Referee(){
-		Deck cards = new Deck();
+
 
 	}
 	
@@ -27,11 +29,15 @@ public class Referee {
 	 */
 	public void playGame()
 	{
+		Deck cards = new Deck();
 		isPlaying = true;
 		System.out.println("Welcome to the game of SET, I am your dealer.");
 		while (isPlaying){
 			System.out.println("You are now playing!");
 			System.out.println("I am going to deal 12 cards on to the board...");
+			for (int i = 0; i<12; i++){
+				hand[i] = cards.dealCard();
+			}
 
 			System.out.println("Would you like to keep playing? y/n");
 			String playAgain = scan.nextLine();
