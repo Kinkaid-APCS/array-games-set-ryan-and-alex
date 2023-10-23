@@ -13,8 +13,6 @@ public class Card {
 
 	// TODO: decide which private member variables the Card class requires and declare them here.
 
-	Random rand = new Random();
-
 	/**
 	 * constructor - given four values, initialize the card.
 	 * @param whichIcon: a number 0-2, where 0 means "*"; 1 means "o"; and 2 means "•" 
@@ -42,7 +40,7 @@ public class Card {
 	 //       you shouldn't write modifiers; a Card never changes.
 	 
 	 
-	/**
+	/**\
 	 * toString - get a visual description of this card.
 	 * @return the string describing this card.
 	 */
@@ -51,6 +49,25 @@ public class Card {
 	// so the string "/u001B[31mTest/u001B[0m" Prints Test in red letters.
 	// and "/u001B[31m/u001B[42mTest2/u001B[0m" prints Test2 in red letters on a green background.
 	//  (the /u001B[0m at the end resets the color to normal for the next thing you print.)
-	
+	public String toString() {
+		String Card = "";
+		if (whichIcon == 0){
+			Card += "*";
+		} else if (whichIcon == 1) {
+			Card += "o";
+		} else if (whichIcon == 2){
+			Card += "•";
+		}
+		if (whichBackground == 0){
+
+		}
+		if (whichColor ==  0){
+
+		}
+		if (groupSize == 1){
+
+		}
+		return Card;
+	}
 	
 }
