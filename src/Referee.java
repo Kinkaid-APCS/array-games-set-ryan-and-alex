@@ -32,6 +32,7 @@ public class Referee {
 		while (isPlaying){
 			System.out.println("You are now playing!");
 			System.out.println("I am going to deal 12 cards on to the board...");
+
 			System.out.println("Would you like to keep playing? y/n");
 			String playAgain = scan.nextLine();
 			if (playAgain.equals("n")){

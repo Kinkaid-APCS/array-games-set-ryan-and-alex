@@ -3,7 +3,9 @@
  */
 public class Deck {
 	private Card[] Deck;
-	private int topOfDeck;
+
+//	private int topOfDeck; decided to do it similar to blackjack
+	private int lastCard;
 	
 	/**
 	 * constructor - makes a deck containing one card for every 
@@ -14,19 +16,22 @@ public class Deck {
 	{
 		//--------------------
 		// TODO: insert your code here.
-		Card pile = new Card();
+		Deck = new Card[81];
+
 		for (int h = 0; h<81;h++){
 			for (int i = 0; i<2;i++){
 				for (int j = 1; i<3;i++){
 					for(int k =0; k<2;k++){
 						for (int l = 0; l<2;l++){
-							Card[h] = pile.Card(i,j,k,l);
+							Deck[h] = new Card(i,j,k,l);
 						}
 
 					}
 				}
 			}
 		}
+		lastCard = Deck.length - 1;
+		this.shuffle();
 
 		
 		//--------------------
@@ -40,14 +45,28 @@ public class Deck {
 	 * then return null.
 	 * @return the next card.
 	 */
+
 	public Card dealCard()
 	{
-		Card c = null;
 		//--------------------
 		// TODO: Insert your code here.
-		
+		if (!this.outOfCards())
+		{
+			Card toReturn = Deck[0];
+			for (int i = 0; i < lastCard; i++)
+			{
+				Deck[i] = Deck[i + 1];
+			}
+			Deck[lastCard] = null;
+			lastCard--;
+			return toReturn;
+		}
+		else
+			throw new ArrayIndexOutOfBoundsException("Attempted to return a card from an empty CardPile.");
+
+
+
 		//--------------------
-		return c;
 	}
 	
 	/**
@@ -82,7 +101,7 @@ public class Deck {
 	}
 
 	public int numCards(){
-		// return lastCard + 1;
+		return lastCard + 1;
 	}
 	
 	/**
@@ -91,9 +110,15 @@ public class Deck {
 	 */
 	public boolean outOfCards()
 	{
-		boolean pastEndOfDeck = false;
+		boolean pastEndOfDeck;
 		//--------------------
 		//TODO: insert your code here
+		if (lastCard > -1){
+			pastEndOfDeck = true;
+		}
+		else {
+			 pastEndOfDeck= false;
+		}
 		
 		//--------------------
 		return pastEndOfDeck;
