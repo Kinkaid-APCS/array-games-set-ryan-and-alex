@@ -8,6 +8,7 @@ public class Deck {
 
 //	private int topOfDeck; decided to do it similar to blackjack
 	private int lastCard;
+	private int number = 0;
 	
 	/**
 	 * constructor - makes a deck containing one card for every 
@@ -17,17 +18,21 @@ public class Deck {
 	public Deck()
 	{
 
-        for (int h = 0; h<81;h++){
-			for (int i = 0; i<2;i++){
-				for (int j = 1; i<3;i++){
-					for(int k =0; k<2;k++){
-						for (int l = 0; l<2;l++){
-							Deck[h] = new Card(i,j,k,l);
+
+			for (int i = 0; i<=2;i++){ //icon
+
+				for (int j = 1; j<=3;j++){ //size
+					for(int k =0; k<=2;k++){ //color
+						for (int l = 0; l<=2;l++){ //background
+							Deck[l] = new Card(i,j,k,l);
+							number += 1;
+							System.out.println(number);
+
+
 						}
 					}
 				}
 			}
-		}
 		lastCard = Deck.length - 1;
 		this.shuffle();
 
