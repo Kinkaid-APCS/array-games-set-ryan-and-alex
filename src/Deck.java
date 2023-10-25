@@ -113,10 +113,10 @@ public class Deck {
 		//--------------------
 		//TODO: insert your code here
 		if (lastCard > -1){
-			pastEndOfDeck = true;
+			pastEndOfDeck = false;
 		}
 		else {
-			 pastEndOfDeck= false;
+			 pastEndOfDeck= true;
 		}
 		
 		//--------------------
