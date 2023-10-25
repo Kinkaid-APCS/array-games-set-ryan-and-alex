@@ -44,7 +44,7 @@ public class Card {
 	 * toString - get a visual description of this card.
 	 * @return the string describing this card.
 	 */
-	// TODO: you write the Card's toString
+	// TODO: you write the Card's toString.
 	// hint: see https://www.geeksforgeeks.org/how-to-print-colored-text-in-java-console/
 	// so the string "/u001B[31mTest/u001B[0m" Prints Test in red letters.
 	// and "/u001B[31m/u001B[42mTest2/u001B[0m" prints Test2 in red letters on a green background.
