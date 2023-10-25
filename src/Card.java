@@ -25,7 +25,7 @@ public class Card {
 		private int whichColor;
 		private int whichBackground;
 
-	 public Card(int whichIcon, int groupSize, int whichColor, int whichBackground)
+	 public Card(int icon, int size, int color, int background)
 	 {
 		//--------------------
 		// TODO: insert your code here.
@@ -55,39 +55,37 @@ public class Card {
 		String color = null;
 		String number = null;
 		String icon = null;
+		String RESET = "\\u001B[0m";
 
-		//whichColor
-		if (whichColor == 0){
-			color = "\u001B[31m"; //this is Red
-		} else if(whichColor ==1) {
-			color = "\u001B[32m"; //this is Green
-		} else if(whichColor==2){
-			color = "\\u001B[35m"; //this is Purple
-		}
+			//whichColor
+			if (whichColor == 0){
+				color = "\u001B[31m"; //this is Red
+			} else if(whichColor ==1) {
+				color = "\u001B[32m"; //this is Green
+			} else if(whichColor==2){
+				color = "\\u001B[35m"; //this is Purple
+			}
 
-		//whichBackground
-		if (whichBackground == 0){
-			background = "\\u001B[43m"; // this is Yellow
-		}else if(whichBackground==1){
-			background = "\\u001B[46m"; // this is Aqua/Cyan
-		}else if(whichBackground==2){
-			background = "\\u001B[44m"; // this is Blue
-		}
+			//whichBackground
+			if (whichBackground == 0){
+				background = "\\u001B[43m"; // this is Yellow
+			}else if(whichBackground==1){
+				background = "\\u001B[46m"; // this is Aqua/Cyan
+			}else if(whichBackground==2){
+				background = "\\u001B[44m"; // this is Blue
+			}
 
-		//whichIcon
-		if (whichIcon == 0){
-			icon = "x";
-		}else if (whichIcon == 1){
-			icon = "•";
-		} else if (whichIcon == 2) {
-			icon = "o";
-		}
+			//whichIcon
+			if (whichIcon == 0){
+				icon = "x";
+			}else if (whichIcon == 1){
+				icon = "•";
+			} else if (whichIcon == 2) {
+				icon = "o";
+			}
 
-		number = icon.repeat(groupSize);
-
-		String Card = (color+background+number);
-
-		return "Cards:\n" + Card;
+			number = icon.repeat(groupSize);
+			return (color+background+number+RESET);
 	}
 	
 }
