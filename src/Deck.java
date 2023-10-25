@@ -24,7 +24,6 @@ public class Deck {
 						for (int l = 0; l<2;l++){
 							Deck[h] = new Card(i,j,k,l);
 						}
-
 					}
 				}
 			}
@@ -113,10 +112,10 @@ public class Deck {
 		//--------------------
 		//TODO: insert your code here
 		if (lastCard > -1){
-			pastEndOfDeck = true;
+			pastEndOfDeck = false;
 		}
 		else {
-			 pastEndOfDeck= false;
+			 pastEndOfDeck= true;
 		}
 		
 		//--------------------
