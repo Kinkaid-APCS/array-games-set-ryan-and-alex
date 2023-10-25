@@ -25,15 +25,15 @@ public class Card {
 		private int whichColor;
 		private int whichBackground;
 
-	 public Card(int whichIcon, int groupSize, int whichColor, int whichBackground)
+	 public Card(int icon, int size, int color, int background)
 	 {
 		//--------------------
 		// TODO: insert your code here.
 		//--------------------
-		 icon = whichIcon;
-		 size = groupSize;
-		 color = whichColor;
-		 background = whichBackground;
+		 whichIcon = icon;
+		 groupSize = size;
+		 whichColor = color;
+		 whichBackground = background;
 	 }
 	
 	 // TODO: write accessors for all member variables. In this case,
