@@ -19,6 +19,7 @@ public class Referee {
 	 */
 	// TODO: write the Referee's constructor method.
 	public Referee(){
+		Deck deck = new Deck();
 		Board board = new Board();
 	}
 	

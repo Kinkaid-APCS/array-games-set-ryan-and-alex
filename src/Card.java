@@ -55,7 +55,7 @@ public class Card {
 		String color = "";
 		String number = "";
 		String icon = "";
-		String RESET = "\\u001B[0m";
+		String RESET = "\u001B[0m";
 
 			//whichColor
 			if (whichColor == 0){
@@ -86,6 +86,7 @@ public class Card {
 
 			number = icon.repeat(groupSize);
 			return (color+background+number+RESET);
+
 	}
 	
 }

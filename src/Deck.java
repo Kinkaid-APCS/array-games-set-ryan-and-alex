@@ -17,18 +17,12 @@ public class Deck {
 	 */
 	public Deck()
 	{
-
-
 			for (int i = 0; i<=2;i++){ //icon
 
 				for (int j = 1; j<=3;j++){ //size
 					for(int k =0; k<=2;k++){ //color
 						for (int l = 0; l<=2;l++){ //background
 							Deck[l] = new Card(i,j,k,l);
-							number += 1;
-							System.out.println(number);
-
-
 						}
 					}
 				}
