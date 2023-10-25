@@ -30,10 +30,10 @@ public class Card {
 		//--------------------
 		// TODO: insert your code here.
 		//--------------------
-		 icon = whichIcon;
-		 size = groupSize;
-		 color = whichColor;
-		 background = whichBackground;
+		 whichIcon = icon;
+		 groupSize = size;
+		 whichColor = color;
+		 whichBackground = background;
 	 }
 	
 	 // TODO: write accessors for all member variables. In this case,
