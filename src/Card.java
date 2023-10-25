@@ -51,37 +51,37 @@ public class Card {
 	//  (the /u001B[0m at the end resets the color to normal for the next thing you print.)
 	public String toString() {
 
-		String background = null;
-		String color = null;
-		String number = null;
-		String icon = null;
+		String background = "";
+		String color = "";
+		String number = "";
+		String icon = "";
 		String RESET = "\\u001B[0m";
 
 			//whichColor
 			if (whichColor == 0){
-				color = "\u001B[31m"; //this is Red
+				color += "\u001B[31m"; //this is Red
 			} else if(whichColor ==1) {
-				color = "\u001B[32m"; //this is Green
+				color += "\u001B[32m"; //this is Green
 			} else if(whichColor==2){
-				color = "\\u001B[35m"; //this is Purple
+				color += "\u001B[35m"; //this is Purple
 			}
 
 			//whichBackground
 			if (whichBackground == 0){
-				background = "\\u001B[43m"; // this is Yellow
+				background += "\u001B[43m"; // this is Yellow
 			}else if(whichBackground==1){
-				background = "\\u001B[46m"; // this is Aqua/Cyan
+				background += "\u001B[46m"; // this is Aqua/Cyan
 			}else if(whichBackground==2){
-				background = "\\u001B[44m"; // this is Blue
+				background += "\u001B[44m"; // this is Blue
 			}
 
 			//whichIcon
 			if (whichIcon == 0){
-				icon = "x";
+				icon += "x";
 			}else if (whichIcon == 1){
-				icon = "•";
+				icon += "•";
 			} else if (whichIcon == 2) {
-				icon = "o";
+				icon += "o";
 			}
 
 			number = icon.repeat(groupSize);
