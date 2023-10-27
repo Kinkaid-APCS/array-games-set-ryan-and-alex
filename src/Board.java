@@ -34,7 +34,6 @@ public class Board {
 
 			//--------------------
 
-
 	
 	/**
 	 * getCardAtLoc - accesses the card at a given location

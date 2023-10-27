@@ -38,8 +38,7 @@ public class Card {
 	
 	 // TODO: write accessors for all member variables. In this case,
 	 //       you shouldn't write modifiers; a Card never changes.
-	 
-	 
+
 	/**\
 	 * toString - get a visual description of this card.
 	 * @return the string describing this card.

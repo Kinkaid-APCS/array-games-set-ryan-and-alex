@@ -95,7 +95,6 @@ public class Deck {
 
 		}
 
-
 		// Hint #1: Remember, (int)(Math.random()*52) will give you an integer from 0..51, inclusive.
 		// Hint #2: 52 is not the number you want for this deck.
 		
