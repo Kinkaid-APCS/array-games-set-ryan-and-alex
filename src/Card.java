@@ -83,10 +83,8 @@ public class Card {
 			} else if (whichIcon == 2) {
 				icon += "o";
 			}
-
 			number = icon.repeat(groupSize);
 			return (color+background+number+RESET);
-
 	}
 	
 }
