@@ -12,24 +12,28 @@ public class Board {
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
-	public Board()
-	{
-		Deck dec = new Deck();
+	public Board() {
+		Deck deck = new Deck();
 		displayedCards = new Card[15];
 		//--------------------
 		// fill the first 12 slots with cards from the deck.
 		// leave the last 3 as null for now.
 		// TODO: Insert your code here.
-		for (int i = 0; i<15; i++){
-			displayedCards[i] = dec.dealCard();
-			if (i>11){
+		for (int i = 0; i < 15; i++) {
+			displayedCards[i] = deck.dealCard();
+			if (i > 11) {
 				displayedCards[i] = null;
 			}
-			System.out.println(displayedCards[i]);
+		}
+		System.out.println("----------------HAND-----------------");
+		for (int j = 0; j<15;j++){
+
+			System.out.println(displayedCards[j]);
+		}
 	}
 
-		//--------------------
-	}
+			//--------------------
+
 	
 	/**
 	 * getCardAtLoc - accesses the card at a given location
@@ -43,7 +47,7 @@ public class Board {
 		Card c = null;
 		//--------------------
 		// TODO: Insert your code here
-		
+
 		//--------------------
 		return c;
 	}
