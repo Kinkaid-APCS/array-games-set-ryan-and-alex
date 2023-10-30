@@ -7,7 +7,7 @@ import java.util.Random;
  *
  * So each card can be represented by four numbers - which icon, how many, color, and background.
  * Each of these numbers has 3 possible values.
- * Question: how many legal combinations are there???
+ * Question: how many legal combinations are there??
  */
 public class Card {
 
