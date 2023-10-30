@@ -35,7 +35,19 @@ public class Card {
 		 whichColor = color;
 		 whichBackground = background;
 	 }
-	
+
+	public int getBackground(){
+		return whichBackground;
+	}
+	public int getColor(){
+		return whichColor;
+	}
+	public int getGroupSize(){
+		return groupSize;
+	}
+	public int getIcon(){
+		return whichIcon;
+	}
 	 // TODO: write accessors for all member variables. In this case,
 	 //       you shouldn't write modifiers; a Card never changes.
 

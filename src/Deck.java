@@ -9,6 +9,7 @@ public class Deck {
 //	private int topOfDeck; decided to do it similar to blackjack
 	private int lastCard;
 	private int number = 0;
+
 	
 	/**
 	 * constructor - makes a deck containing one card for every 
@@ -17,18 +18,20 @@ public class Deck {
 	 */
 	public Deck()
 	{
+		int counter = 0;
 			for (int i = 0; i<=2;i++){ //icon
 				for (int j = 1; j<=3;j++){ //size
 					for(int k =0; k<=2;k++){ //color
 						for (int l = 0; l<=2;l++){ //background
-							Deck[l] = new Card(i,j,k,l);
-							number += 1;
-							System.out.println(number);
+							Deck[counter] = new Card(i,j,k,l);
+//							System.out.println(counter+"\t"+Deck[counter]);
+							counter++;
 
 						}
 					}
 				}
 			}
+
 		lastCard = Deck.length - 1;
 		this.shuffle();
 
@@ -47,10 +50,7 @@ public class Deck {
 
 	public Card dealCard()
 	{
-		//--------------------
-		// TODO: Insert your code here.
-		if (!this.outOfCards())
-		{
+		if (!outOfCards()){
 			Card toReturn = Deck[0];
 			for (int i = 0; i < lastCard; i++)
 			{
@@ -58,10 +58,14 @@ public class Deck {
 			}
 			Deck[lastCard] = null;
 			lastCard--;
+
 			return toReturn;
 		}
-		else
+
+		else{
 			throw new ArrayIndexOutOfBoundsException("Attempted to return a card from an empty CardPile.");
+		}
+
 
 
 

@@ -8,7 +8,7 @@
  */
 public class Board {
 	
-	Card[] displayedCards;
+	private Card[] displayedCards;
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
@@ -28,7 +28,7 @@ public class Board {
 		System.out.println("----------------HAND-----------------");
 		for (int j = 0; j<15;j++){
 
-			System.out.println(displayedCards[j]);
+			System.out.println(j + "-" +displayedCards[j]);
 		}
 	}
 
@@ -44,12 +44,9 @@ public class Board {
 	 */
 	public Card getCardAtLoc(int loc)
 	{
-		Card c = null;
-		//--------------------
-		// TODO: Insert your code here
 
-		//--------------------
-		return c;
+		System.out.println(displayedCards[loc]);
+		return displayedCards[loc];
 	}
 	
 	/**

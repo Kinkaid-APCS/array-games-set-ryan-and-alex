@@ -19,7 +19,7 @@ public class Referee {
 	 */
 	// TODO: write the Referee's constructor method.
 	public Referee(){
-		Board board = new Board();
+
 	}
 	
 	/**
@@ -27,10 +27,12 @@ public class Referee {
 	 */
 	public void playGame()
 	{
+		Board brd = new Board();
 		isPlaying = true;
 		System.out.println("Welcome to the game of SET, I am your dealer.");
 		while (isPlaying){
 			System.out.println("You are now playing!");
+			brd.getCardAtLoc(11);
 			System.out.println("I am going to deal 12 cards on to the board...");
 			System.out.println("Would you like to keep playing? y/n");
 			String playAgain = scan.nextLine();

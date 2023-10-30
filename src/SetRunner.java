@@ -10,7 +10,6 @@ public class SetRunner {
 		{
 			System.out.println("Start tests");
 			// enter test code here.
-
 			System.out.println("End tests");
 		}
 		else
