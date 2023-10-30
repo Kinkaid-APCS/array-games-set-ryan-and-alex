@@ -39,15 +39,7 @@ public class Card {
 	 // TODO: write accessors for all member variables. In this case,
 	 //       you shouldn't write modifiers; a Card never changes.
 
-	/**\
-	 * toString - get a visual description of this card.
-	 * @return the string describing this card.
-	 */
-	// TODO: you write the Card's toString
-	// hint: see https://www.geeksforgeeks.org/how-to-print-colored-text-in-java-console/
-	// so the string "/u001B[31mTest/u001B[0m" Prints Test in red letters.
-	// and "/u001B[31m/u001B[42mTest2/u001B[0m" prints Test2 in red letters on a green background.
-	//  (the /u001B[0m at the end resets the color to normal for the next thing you print.)
+
 	public String toString() {
 
 		String background = "";
@@ -60,16 +52,16 @@ public class Card {
 			if (whichColor == 0){
 				color += "\u001B[31m"; //this is Red
 			} else if(whichColor ==1) {
-				color += "\u001B[32m"; //this is Green
+				color += "\u001B[47m"; //this is Green
 			} else if(whichColor==2){
 				color += "\u001B[35m"; //this is Purple
 			}
 
 			//whichBackground
 			if (whichBackground == 0){
-				background += "\u001B[42m"; // this is Yellow
+				background += "\u001B[43m"; // this is Yellow
 			}else if(whichBackground==1){
-				background += "\u001B[43m"; // this is Green
+				background += "\u001B[42m"; // this is Green
 			}else if(whichBackground==2){
 				background += "\u001B[44m"; // this is Blue
 			}
