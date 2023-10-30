@@ -24,7 +24,7 @@ public class Deck {
 					for(int k =0; k<=2;k++){ //color
 						for (int l = 0; l<=2;l++){ //background
 							Deck[counter] = new Card(i,j,k,l);
-							System.out.println(counter+"\t"+Deck[counter]);
+//							System.out.println(counter+"\t"+Deck[counter]);
 							counter++;
 
 						}
