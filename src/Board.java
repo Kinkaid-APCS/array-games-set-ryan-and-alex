@@ -45,18 +45,8 @@ public class Board {
 	public Card getCardAtLoc(int loc)
 	{
 
-		String c = null;
-
-//		// TODO: Insert your code here
-		int icon = displayedCards[loc].getIcon();
-		int color = displayedCards[loc].getColor();
-		int background = displayedCards[loc].getBackground();
-		int groupSize = displayedCards[loc].getGroupSize();
-
-		String c = icon+" "+color+" "+background+" "+groupSize;
-
-		//--------------------
-		return c;
+		System.out.println(displayedCards[loc]);
+		return displayedCards[loc];
 	}
 	
 	/**
