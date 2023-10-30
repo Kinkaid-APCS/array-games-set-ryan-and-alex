@@ -64,7 +64,7 @@ public class Card {
 			if (whichColor == 0){
 				color += "\u001B[31m"; //this is Red
 			} else if(whichColor ==1) {
-				color += "\u001B[47m"; //this is Green
+				color += "\u001B[37m"; //this is White
 			} else if(whichColor==2){
 				color += "\u001B[35m"; //this is Purple
 			}
