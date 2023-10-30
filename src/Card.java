@@ -67,9 +67,9 @@ public class Card {
 
 			//whichBackground
 			if (whichBackground == 0){
-				background += "\u001B[43m"; // this is Yellow
+				background += "\u001B[42m"; // this is Yellow
 			}else if(whichBackground==1){
-				background += "\u001B[46m"; // this is Aqua/Cyan
+				background += "\u001B[43m"; // this is Green
 			}else if(whichBackground==2){
 				background += "\u001B[44m"; // this is Blue
 			}
