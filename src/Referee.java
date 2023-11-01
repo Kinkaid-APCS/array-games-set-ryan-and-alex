@@ -68,7 +68,7 @@ public class Referee {
 			while (cardA == cardB){
 				System.out.println("You must pick a different card!");
 				cardB = scan.nextInt();
-			}
+			}//
 
 
 			System.out.println("["+brd.getCardAtLoc(cardA)+"] ["+brd.getCardAtLoc(cardB)+"] []");
