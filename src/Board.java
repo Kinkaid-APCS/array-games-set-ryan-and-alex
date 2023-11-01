@@ -120,13 +120,10 @@ public class Board {
 	 * the deck and put them into the first three locations that contain
 	 * null.
 	 */
-	public void dealThreeCards()
-	{
-		//--------------------
-		// TODO: insert your code here.
-
-		
-		//--------------------
+	public void dealThreeCards() {
+		for (int i = 11; i<15; i++){
+			displayedCards[i] = deck.dealCard();
+		}
 	}
 	//
 	/**
