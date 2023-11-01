@@ -42,7 +42,7 @@ public class Referee {
 			if (cardA == -1) {
 				brd.dealThreeCards();
 				System.out.println("Give me the number of the first card");
-				int cardA = scan.nextInt();
+                cardA = scan.nextInt();
 			}
 
 			System.out.println("Give me the second card:");
