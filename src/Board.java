@@ -8,13 +8,14 @@
  */
 public class Board {
 	
-	private Card[] displayedCards = new Card[15];
+	private Card[] displayedCards;
 	Deck deck = new Deck();
-
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
 	public Board() {
+
+		displayedCards = new Card[15];
 		//--------------------
 		// fill the first 12 slots with cards from the deck.
 		// leave the last 3 as null for now.
@@ -27,11 +28,10 @@ public class Board {
 		}
 		System.out.println("----------------HAND-----------------");
 		for (int j = 0; j<15;j++){
+
 			System.out.println(j + "-" +displayedCards[j]);
 		}
 	}
-
-			//--------------------
 
 	
 	/**
@@ -94,8 +94,23 @@ public class Board {
 		//       factors of 3. You should not need a ton of "if" statements!!!!
 		//       See me if you have questions.
 		// TODO: insert your code here.
-		
+
+		int allColors = a.getColor() + b.getColor() + c.getColor();
+		int allBackgrounds = a.getBackground() + b.getBackground() + c.getBackground();
+		int allIcons = a.getIcon() + b.getIcon() + c.getIcon();
+		int allGroupSizes = a.getGroupSize() + b.getGroupSize() + c.getGroupSize();
+
+		if (allColors%3 == 0 || allColors == 2){
+			if (allBackgrounds%3 == 0 || allBackgrounds == 2){
+				if (allIcons%3 ==0 || allIcons == 2){
+					if (allGroupSizes%3 == 0){
+						legal = true;
+					}
+				}
+			}
+		}
 		//--------------------
+		System.out.println(legal);
 		return legal;
 	}
 	
@@ -105,10 +120,13 @@ public class Board {
 	 * the deck and put them into the first three locations that contain
 	 * null.
 	 */
-	public void dealThreeCards() {
-		for (int i = 11; i<15; i++){
-			displayedCards[i] = deck.dealCard();
-		}
+	public void dealThreeCards()
+	{
+		//--------------------
+		// TODO: insert your code here.
+
+		
+		//--------------------
 	}
 	
 	/**
@@ -124,6 +142,9 @@ public class Board {
 	 * prerequisite: all three locations are within 0-14, all point to non-null cards,
 	 * and there are no duplicates.
 	 */
+	public void removeThreeCards(){
+
+	}
 	 // TODO: 
 	 // 1: write the remove3Cards() method signature. (i.e., return type, method name, parameter list)
 	 //    MAKE SURE THAT YOU COMMUNICATE THIS WITH THE REST OF YOUR TEAM.
@@ -138,9 +159,12 @@ public class Board {
 	 */
 	public int getNumCardsOnBoard()
 	{
-		int numCards = 0;
+		int numCards = 15;
 		//--------------------
 		// TODO: insert your code here
+		if (displayedCards[12] == null){
+			numCards = 12;
+		}
 		
 		//--------------------
 		return numCards;
@@ -155,7 +179,21 @@ public class Board {
 	{
 		String result = "";
 		//--------------------
+		int counter = 0;
 		// TODO: insert your code here.
+		//i is rows, j is columns
+		for (int i = 0; i<5; i++){
+			for (int j = 0;j<3;j++){
+				if (displayedCards[counter] == null){
+					counter++;
+				}
+				else {
+					System.out.print(counter + "" + "[" + displayedCards[counter] + "]");
+					counter++;
+				}
+			}
+			System.out.println("");
+		}
 		
 		//--------------------
 		return result;
