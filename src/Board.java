@@ -8,13 +8,13 @@
  */
 public class Board {
 	
-	private Card[] displayedCards;
+	private Card[] displayedCards = new Card[15];
+	Deck deck = new Deck();
+
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
 	public Board() {
-		Deck deck = new Deck();
-		displayedCards = new Card[15];
 		//--------------------
 		// fill the first 12 slots with cards from the deck.
 		// leave the last 3 as null for now.
@@ -27,7 +27,6 @@ public class Board {
 		}
 		System.out.println("----------------HAND-----------------");
 		for (int j = 0; j<15;j++){
-
 			System.out.println(j + "-" +displayedCards[j]);
 		}
 	}
@@ -106,12 +105,10 @@ public class Board {
 	 * the deck and put them into the first three locations that contain
 	 * null.
 	 */
-	public void dealThreeCards()
-	{
-		//--------------------
-		// TODO: insert your code here.
-		
-		//--------------------
+	public void dealThreeCards() {
+		for (int i = 11; i<15; i++){
+			displayedCards[i] = deck.dealCard();
+		}
 	}
 	
 	/**
