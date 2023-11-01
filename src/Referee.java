@@ -35,9 +35,15 @@ public class Referee {
 //			brd.getCardAtLoc(11);
 
 			System.out.println("I am going to deal 12 cards on to the board...");
+			brd.toString();
 
-			System.out.println("Give me the first card:");
+			System.out.println("If you think there are no matches, type -1. Otherwise, give me the number of the first card\n[] [] []");
 			int cardA = scan.nextInt();
+			if (cardA == -1) {
+				brd.dealThreeCards();
+				System.out.println("Give me the number of the first card");
+				int cardA = scan.nextInt();
+			}
 
 			System.out.println("Give me the second card:");
 			int cardB = scan.nextInt();
