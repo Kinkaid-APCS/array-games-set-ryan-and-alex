@@ -41,12 +41,14 @@ public class Referee {
 			int cardA = scan.nextInt();
 			if (cardA == -1) {
 				brd.dealThreeCards();
+				brd.toString();
 				System.out.println("Give me the number of the first card");
                 cardA = scan.nextInt();
 			}
-
+			System.out.println("["+brd.getCardAtLoc(cardA)+"] [] []");
 			System.out.println("Give me the second card:");
 			int cardB = scan.nextInt();
+
 
 			System.out.println("Give me the third card:");
 			int cardC = scan.nextInt();
