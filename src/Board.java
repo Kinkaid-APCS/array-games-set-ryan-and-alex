@@ -121,8 +121,12 @@ public class Board {
 	 * null.
 	 */
 	public void dealThreeCards() {
-		for (int i = 11; i<15; i++){
-			displayedCards[i] = deck.dealCard();
+		if (!(displayedCards[12] == null)){
+			System.out.println("You've already drawn three cards!");
+		}else{
+			for (int i = 11; i<15; i++){
+				displayedCards[i] = deck.dealCard();
+			}
 		}
 	}
 	
@@ -140,7 +144,14 @@ public class Board {
 	 * and there are no duplicates.
 	 */
 	public void removeThreeCards(){
-
+		boolean isPossible = true;
+		if (displayedCards[12] == null){
+			System.out.println("You haven't drawn 3 more cards!");
+		}else{
+			for (int i = 11; i < 15; i++){
+				displayedCards[i] = null;
+			}
+		}
 	}
 	 // TODO: 
 	 // 1: write the remove3Cards() method signature. (i.e., return type, method name, parameter list)
