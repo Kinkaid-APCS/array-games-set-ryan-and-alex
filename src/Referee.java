@@ -45,13 +45,41 @@ public class Referee {
 				System.out.println("Give me the number of the first card");
                 cardA = scan.nextInt();
 			}
-			System.out.println("["+brd.getCardAtLoc(cardA)+"] [] []");
-			System.out.println("Give me the second card:");
-			int cardB = scan.nextInt();
+			while (cardA < 0) {
+				System.out.println("You can not add any more cards!");
+				System.out.println("Give me the number of the first card");
+				cardA = scan.nextInt();
+			}
 
+			System.out.println("["+brd.getCardAtLoc(cardA)+"] [] []");
+			System.out.println("If you think there are no matches, type -1. Give me the second card:");
+			if (cardA == -1) {
+				brd.dealThreeCards();
+				brd.toString();
+				System.out.println("Give me the number of the first card");
+				cardA = scan.nextInt();
+			}
+			while (cardA < 0) {
+				System.out.println("You can not add any more cards!");
+				System.out.println("Give me the number of the first card");
+				cardA = scan.nextInt();
+			}
+			int cardB = scan.nextInt();
+			while (cardA == cardB){
+				System.out.println("You must pick a different card!");
+				cardB = scan.nextInt();
+			}
+
+
+			System.out.println("["+brd.getCardAtLoc(cardA)+"] ["+brd.getCardAtLoc(cardB)+"] []");
 
 			System.out.println("Give me the third card:");
 			int cardC = scan.nextInt();
+			while (cardC == cardB || cardC == cardA){
+				System.out.println("You must pick a different card!");
+				cardB = scan.nextInt();
+			}
+
 			brd.isLegal(brd.getCardAtLoc(cardA), brd.getCardAtLoc(cardB),brd.getCardAtLoc(cardC));
 
 
@@ -60,7 +88,6 @@ public class Referee {
 			if (playAgain.equals("n")){
 				isPlaying = false;
 			}
-
 		}
 	}
 }
