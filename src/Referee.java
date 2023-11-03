@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class Referee {
 	// TODO: decide which private member variables the Referee class needs and declare them here.
 	private boolean isPlaying;
+	boolean expandedDeck = false;
 
 	private Scanner scan = new Scanner(System.in);
 	/**
@@ -32,18 +33,18 @@ public class Referee {
 		isPlaying = true;
 		System.out.println("Welcome to the game of SET, I am your dealer.");
 		System.out.println("I am going to deal 12 cards on to the board...");
-		System.out.println("You are now playing!");
 
 		while (isPlaying){
-//			brd.getCardAtLoc(11);
 			System.out.println("╔════════《SET》════════╗\n");
 			brd.toString();
 			System.out.println("╚═════════《-》═════════╝");
 			System.out.println("Removed cards: " + removedCards +"\n");
+			//-------------------------------------------------------
 			System.out.println("If you think there are no matches, type -1. Otherwise, give me the number of the first card\n[] [] []");
 			int cardA = scan.nextInt();
 			if (cardA == -1) {
 				brd.dealThreeCards();
+				expandedDeck = true;
 				System.out.println("╔════════《SET》════════╗\n");
 				brd.toString();
 				System.out.println("\n╚═════════《-》═════════╝");
@@ -70,12 +71,12 @@ public class Referee {
 				System.out.println("Give me the number of the first card");
 				cardA = scan.nextInt();
 			}
+			//-------------------------------------------------------
 			int cardB = scan.nextInt();
 			while (cardA == cardB){
 				System.out.println("You must pick a different card!");
 				cardB = scan.nextInt();
-			}//
-
+			}
 
 			System.out.println("["+brd.getCardAtLoc(cardA)+"] ["+brd.getCardAtLoc(cardB)+"] []");
 
@@ -83,13 +84,13 @@ public class Referee {
 			int cardC = scan.nextInt();
 			while (cardC == cardB || cardC == cardA){
 				System.out.println("You must pick a different card!");
-				cardB = scan.nextInt();
+				cardC = scan.nextInt();
 			}
-
+			System.out.println("["+brd.getCardAtLoc(cardA)+"] ["+brd.getCardAtLoc(cardB)+"] ["+brd.getCardAtLoc(cardC)+"]");
 			boolean checkToRemove = brd.isLegal(brd.getCardAtLoc(cardA), brd.getCardAtLoc(cardB),brd.getCardAtLoc(cardC));
+//
 
 			if (checkToRemove){
-				 //idk if theres a point system in set but I think saved cards could be the value
 				brd.removeThreeCards(cardA, cardB, cardC);
 				removedCards += 3;
 			}
