@@ -26,11 +26,6 @@ public class Board {
 				displayedCards[i] = null;
 			}
 		}
-		System.out.println("----------------HAND-----------------");
-		for (int j = 0; j<15;j++){
-
-			System.out.println(j + "-" +displayedCards[j]);
-		}
 	}
 
 	
@@ -102,12 +97,15 @@ public class Board {
 				if (allIcons%3 ==0 || allIcons == 2){
 					if (allGroupSizes%3 == 0){
 						legal = true;
+						System.out.println("SET FOUND!\n");
+
 					}
 				}
 			}
+		}else{
+			System.out.println("NOT A SET. TRY AGAIN!\n");
 		}
 		//--------------------
-		System.out.println(legal);
 		return legal;
 	}
 	
@@ -139,13 +137,18 @@ public class Board {
 	 * and there are no duplicates.
 	 */
 	public void removeThreeCards(int aCard, int bCard, int cCard){
-		for (int i = 1; i<3; i++){
+		for (int i = 0; i<15; i++){
 			if (aCard==i){
 				displayedCards[aCard] = null;
 			}else if (bCard==i){
 				displayedCards[bCard] = null;
 			}else if (cCard==i){
 				displayedCards[cCard] = null;
+			}
+		}
+		for (int i = 0; i<15; i++){
+			if (displayedCards[i] == null){
+				displayedCards[i] = deck.dealCard();
 			}
 		}
 	}
@@ -192,7 +195,7 @@ public class Board {
 					counter++;
 				}
 				else {
-					System.out.print(counter + "" + "[" + displayedCards[counter] + "]");
+					System.out.print(counter + "." + "[" + displayedCards[counter] + "] ");
 					counter++;
 				}
 			}

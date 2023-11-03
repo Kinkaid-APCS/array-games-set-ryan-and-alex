@@ -27,22 +27,28 @@ public class Referee {
 	 */
 	public void playGame()
 	{
+		int removedCards = 0;
 		Board brd = new Board();
 		isPlaying = true;
 		System.out.println("Welcome to the game of SET, I am your dealer.");
+		System.out.println("I am going to deal 12 cards on to the board...");
+		System.out.println("You are now playing!");
+
 		while (isPlaying){
-			System.out.println("You are now playing!");
 //			brd.getCardAtLoc(11);
-
-			System.out.println("I am going to deal 12 cards on to the board...");
+			System.out.println("╔════════《SET》════════╗\n");
 			brd.toString();
-
+			System.out.println("╚═════════《-》═════════╝");
+			System.out.println("Removed cards: " + removedCards +"\n");
 			System.out.println("If you think there are no matches, type -1. Otherwise, give me the number of the first card\n[] [] []");
 			int cardA = scan.nextInt();
 			if (cardA == -1) {
 				brd.dealThreeCards();
+				System.out.println("╔════════《SET》════════╗\n");
 				brd.toString();
-				System.out.println("Give me the number of the first card");
+				System.out.println("\n╚═════════《-》═════════╝");
+				System.out.println("Removed cards: " + removedCards +"\n");
+				System.out.println("Give me the number of the first card\n[] [] []");
                 cardA = scan.nextInt();
 			}
 			while (cardA < 0) {
@@ -52,7 +58,7 @@ public class Referee {
 			}
 
 			System.out.println("["+brd.getCardAtLoc(cardA)+"] [] []");
-			System.out.println("If you think there are no matches, type -1. Give me the second card:");
+			System.out.println("Give me the second card:");
 			if (cardA == -1) {
 				brd.dealThreeCards();
 				brd.toString();
@@ -80,13 +86,12 @@ public class Referee {
 				cardB = scan.nextInt();
 			}
 
-			brd.isLegal(brd.getCardAtLoc(cardA), brd.getCardAtLoc(cardB),brd.getCardAtLoc(cardC));
+			boolean checkToRemove = brd.isLegal(brd.getCardAtLoc(cardA), brd.getCardAtLoc(cardB),brd.getCardAtLoc(cardC));
 
-
-			System.out.println("Would you like to keep playing? y/n");
-			String playAgain = scan.nextLine();
-			if (playAgain.equals("n")){
-				isPlaying = false;
+			if (checkToRemove){
+				 //idk if theres a point system in set but I think saved cards could be the value
+				brd.removeThreeCards(cardA, cardB, cardC);
+				removedCards += 3;
 			}
 		}
 	}
