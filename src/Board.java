@@ -44,16 +44,13 @@ public class Board {
 	public Card getCardAtLoc(int loc)
 	{
 
-		System.out.println(displayedCards[loc]);
 		return displayedCards[loc];
 	}
 	
 	/**
 	 * isLegal - determines whether the three cards at the given locations
 	 * are a "SET."
-	 * @param cardLocation0
-	 * @param cardLocation1
-	 * @param cardLocation2  // alternately, use a small array.
+	 *  // alternately, use a small array.
 	 * @return whether (true/false) these cards are a "SET."
 	 * A SET is formed when for each of the four categories, all the cards 
 	 * are the same, or all are different. For example, here is a "SET":
@@ -136,20 +133,19 @@ public class Board {
 	 * them into empty locations.
 	 * If there are fewer than 12 cards remaining and there are cards in the deck,
 	 * fill in empty places with three cards dealt from the deck.
-	 * @param cardLocation0
-	 * @param cardLocation1
-	 * @param cardLocation2 // alternate version: an array of locations
+	 *  // alternate version: an array of locations
 	 * note: no return value; only private member variables changed.
 	 * prerequisite: all three locations are within 0-14, all point to non-null cards,
 	 * and there are no duplicates.
 	 */
-	public void removeThreeCards(){
-		boolean isPossible = true;
-		if (displayedCards[12] == null){
-			System.out.println("You haven't drawn 3 more cards!");
-		}else{
-			for (int i = 11; i < 15; i++){
-				displayedCards[i] = null;
+	public void removeThreeCards(int aCard, int bCard, int cCard){
+		for (int i = 1; i<3; i++){
+			if (aCard==i){
+				displayedCards[aCard] = null;
+			}else if (bCard==i){
+				displayedCards[bCard] = null;
+			}else if (cCard==i){
+				displayedCards[cCard] = null;
 			}
 		}
 	}
